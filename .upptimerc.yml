@@ -1,29 +1,30 @@
 # Fondaro status page — powered by Upptime (https://upptime.js.org)
 # Config plan: fondaro-mono/docs/plans/2026-06-04-status-page.md
+#
+# Only endpoints that (a) are live and (b) honestly reflect health are active.
+# Auth-gated dashboard monitoring is intentionally deferred to a real deep
+# health check — see the plan's "Monitoring auth-gated surfaces" section. We do
+# NOT ping the sign-in page as a dashboard proxy: it says nothing about whether
+# the authenticated app actually works.
 owner: fondaro
 repo: status
 
 sites:
   - name: Marketing site
     url: https://fondaro.com
-  - name: App (sign-in)
-    url: https://www.fondaro.com/sign-in
-    # The dashboard itself is Clerk-gated and currently SSR-500s for
-    # unauthenticated probes, so we monitor the public sign-in entry as the
-    # "app is reachable" signal. Swap for the public /api/health function check
-    # in Phase 1.
   - name: API
     url: https://api.fondaro.com/health      # 503 if the main OR properties DB is down
 
-  # --- Phase 1: uncomment each once its endpoint/host is live ---
-  # - name: Web app (functions)
-  #   url: https://fondaro.com/api/health     # needs apps/web app/api/health/route.ts
+  # --- Phase 1: add once the real endpoints/hosts exist (see plan) ---
+  # - name: Dashboard (app)
+  #   url: https://fondaro.com/api/health     # DEEP check: web + API + Clerk reachable
   # - name: API process
-  #   url: https://api.fondaro.com/health/live  # needs apps/api GET /health/live
-  # - name: Sanity Studio
-  #   url: https://<studio-host>              # studio.fondaro.com does NOT resolve yet
+  #   url: https://api.fondaro.com/health/live
   # - name: Brand sites
-  #   url: https://<brand-sites-host>         # confirm canonical URL
+  #   url: https://<brand-sites-host>
+  #
+  # Sanity Studio: dropped — not on main, not live, studio.fondaro.com does not
+  # resolve. Add a row when it ships.
 
 status-website:
   cname: status.fondaro.com
