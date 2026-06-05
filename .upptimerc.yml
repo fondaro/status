@@ -6,22 +6,24 @@ repo: status
 sites:
   - name: Marketing site
     url: https://fondaro.com
-  - name: Dashboard
-    url: https://fondaro.com/dashboard
-    # Auth-gated: an unauthenticated probe gets 200/redirect to sign-in, which
-    # still proves the app is serving. Upptime treats 2xx/3xx as up.
+  - name: App (sign-in)
+    url: https://www.fondaro.com/sign-in
+    # The dashboard itself is Clerk-gated and currently SSR-500s for
+    # unauthenticated probes, so we monitor the public sign-in entry as the
+    # "app is reachable" signal. Swap for the public /api/health function check
+    # in Phase 1.
   - name: API
     url: https://api.fondaro.com/health      # 503 if the main OR properties DB is down
-  - name: Sanity Studio
-    url: https://studio.fondaro.com
 
-  # --- Phase 1: uncomment each once its endpoint is live in prod ---
+  # --- Phase 1: uncomment each once its endpoint/host is live ---
   # - name: Web app (functions)
   #   url: https://fondaro.com/api/health     # needs apps/web app/api/health/route.ts
   # - name: API process
   #   url: https://api.fondaro.com/health/live  # needs apps/api GET /health/live
+  # - name: Sanity Studio
+  #   url: https://<studio-host>              # studio.fondaro.com does NOT resolve yet
   # - name: Brand sites
-  #   url: https://<brand-sites-host>          # confirm canonical URL
+  #   url: https://<brand-sites-host>         # confirm canonical URL
 
 status-website:
   cname: status.fondaro.com
@@ -33,9 +35,3 @@ status-website:
       href: /
     - title: Incidents
       href: https://github.com/fondaro/status/issues
-
-# Phase 2 — Slack alerts to the support channel. Add SLACK_WEBHOOK_URL as a repo
-# secret, then uncomment:
-# notifications:
-#   - type: slack
-#     channel: "#support"
