@@ -36,3 +36,69 @@ status-website:
       href: /
     - title: Incidents
       href: https://github.com/fondaro/status/issues
+  # Brand the Upptime theme to match Fondaro (apps/web globals.css): #6C47FF
+  # primary, slate surfaces, #40c4aa "up" green, Geist type. !important on the
+  # custom-property declarations so we win regardless of CSS injection order.
+  customHeadHtml: >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+  css: |
+    :root {
+      --body-background-color: #f8fafc !important;
+      --body-text-color: #1e293b !important;
+      --card-background-color: #ffffff !important;
+      --nav-background-color: #ffffff !important;
+      --nav-border-bottom-color: #e5e7eb !important;
+      --nav-current-border-bottom-color: #6C47FF !important;
+      --card-border-color: #e5e7eb !important;
+      --up-border-left-color: #40c4aa !important;
+      --degraded-border-left-color: #c98a1b !important;
+      --down-border-left-color: #ef4444 !important;
+      --down-background-color: #fee2e2 !important;
+      --tag-color: #ffffff !important;
+      --tag-up-background-color: #40c4aa !important;
+      --tag-degraded-background-color: #c98a1b !important;
+      --tag-down-background-color: #ef4444 !important;
+      --change-background-color: #c98a1b !important;
+      --error-button-border-color: #5a39d6 !important;
+      --error-button-background-color: #6C47FF !important;
+      --error-button-color: #ffffff !important;
+      --submit-button-border-color: #5a39d6 !important;
+      --submit-button-background-color: #6C47FF !important;
+      --submit-button-color: #ffffff !important;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --body-background-color: #0f172a !important;
+        --body-text-color: #e2e8f0 !important;
+        --card-background-color: #1e293b !important;
+        --nav-background-color: #0f172a !important;
+        --nav-border-bottom-color: #334155 !important;
+        --nav-current-border-bottom-color: #8B6FFF !important;
+        --card-border-color: #334155 !important;
+        --up-border-left-color: #40c4aa !important;
+        --degraded-border-left-color: #e0a93a !important;
+        --down-border-left-color: #ef4444 !important;
+        --down-background-color: #3a1d22 !important;
+        --tag-up-background-color: #40c4aa !important;
+        --tag-degraded-background-color: #e0a93a !important;
+        --tag-down-background-color: #ef4444 !important;
+        --change-background-color: #e0a93a !important;
+        --error-button-border-color: #6d54d8 !important;
+        --error-button-background-color: #8B6FFF !important;
+        --submit-button-border-color: #6d54d8 !important;
+        --submit-button-background-color: #8B6FFF !important;
+      }
+    }
+    /* Type + brand polish */
+    body {
+      font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+        sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
+    header h1 { font-weight: 700; }
+    main a { color: #6C47FF; }
+    @media (prefers-color-scheme: dark) { main a { color: #A78BFA; } }
