@@ -18,24 +18,22 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Dashboard",
-    "url": "https://fondaro.com/dashboard",
-    "icon": "https://icons.duckduckgo.com/ip3/fondaro.com.ico",
-    "slug": "dashboard",
-    "status": "down",
-    "uptime": "30.77%",
-    "uptimeDay": "30.77%",
-    "uptimeWeek": "30.77%",
-    "uptimeMonth": "30.77%",
-    "uptimeYear": "30.77%",
-    "time": 364,
-    "timeDay": 364,
-    "timeWeek": 364,
-    "timeMonth": 364,
-    "timeYear": 364,
-    "dailyMinutesDown": {
-      "2026-06-05": 0
-    }
+    "name": "App (sign-in)",
+    "url": "https://www.fondaro.com/sign-in",
+    "icon": "https://icons.duckduckgo.com/ip3/www.fondaro.com.ico",
+    "slug": "app-sign-in",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 632,
+    "timeDay": 632,
+    "timeWeek": 632,
+    "timeMonth": 632,
+    "timeYear": 632,
+    "dailyMinutesDown": {}
   },
   {
     "name": "API",
@@ -54,25 +52,5 @@
     "timeMonth": 305,
     "timeYear": 305,
     "dailyMinutesDown": {}
-  },
-  {
-    "name": "Sanity Studio",
-    "url": "https://studio.fondaro.com",
-    "icon": "https://icons.duckduckgo.com/ip3/studio.fondaro.com.ico",
-    "slug": "sanity-studio",
-    "status": "down",
-    "uptime": "80.59%",
-    "uptimeDay": "80.59%",
-    "uptimeWeek": "80.59%",
-    "uptimeMonth": "80.59%",
-    "uptimeYear": "80.59%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-06-05": 0
-    }
   }
 ]
