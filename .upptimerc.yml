@@ -12,16 +12,16 @@ repo: status
 sites:
   - name: Marketing site
     url: https://fondaro.com
+  - name: Dashboard (app)
+    url: https://fondaro.com/api/health      # DEEP readiness: web + API + Clerk reachable (else 503)
   - name: API
     url: https://api.fondaro.com/health      # 503 if the main OR properties DB is down
+  - name: API process
+    url: https://api.fondaro.com/health/live # process-only; stays up even if a DB is down
 
-  # --- Phase 1: add once the real endpoints/hosts exist (see plan) ---
-  # - name: Dashboard (app)
-  #   url: https://fondaro.com/api/health     # DEEP check: web + API + Clerk reachable
-  # - name: API process
-  #   url: https://api.fondaro.com/health/live
-  # - name: Brand sites
-  #   url: https://<brand-sites-host>
+  # Brand sites: dropped for now — apps/brand-sites is multi-tenant with no single
+  # canonical public host, so there's no honest "up" URL yet. Add a row once a
+  # representative host exists (decision 2026-06-05).
   #
   # Sanity Studio: dropped — not on main, not live, studio.fondaro.com does not
   # resolve. Add a row when it ships.
