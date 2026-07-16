@@ -14,8 +14,15 @@ sites:
     url: https://fondaro.com
   - name: Dashboard (app)
     url: https://fondaro.com/api/health      # DEEP readiness: web + API + Clerk reachable (else 503)
+    # Slow-but-200 must show as "degraded", not green (remediation §8.8 —
+    # "we always show 100% uptime even when performance is degraded").
+    # Baseline from GH runners ≈650ms avg; ~4× that = real user-felt slowness.
+    maxResponseTime: 2500
   - name: API
     url: https://api.fondaro.com/health      # 503 if the main OR properties DB is down
+    # Baseline ≈400ms avg. DB-pool pings are deadline-bounded at 2s and flip
+    # this row red (503) beyond that, so degraded covers the 0.4s–2s gap.
+    maxResponseTime: 1500
   - name: API process
     url: https://api.fondaro.com/health/live # process-only; stays up even if a DB is down
 
