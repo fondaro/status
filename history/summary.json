@@ -22,19 +22,20 @@
     "url": "https://fondaro.com/api/health",
     "icon": "https://icons.duckduckgo.com/ip3/fondaro.com.ico",
     "slug": "dashboard-app",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.99%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "99.84%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "99.83%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.99%",
-    "time": 747,
-    "timeDay": 838,
-    "timeWeek": 1037,
-    "timeMonth": 823,
-    "timeYear": 747,
+    "time": 786,
+    "timeDay": 2501,
+    "timeWeek": 1350,
+    "timeMonth": 921,
+    "timeYear": 786,
     "dailyMinutesDown": {
-      "2026-08-22": 17
+      "2026-08-22": 17,
+      "2026-08-25": 0
     }
   },
   {
